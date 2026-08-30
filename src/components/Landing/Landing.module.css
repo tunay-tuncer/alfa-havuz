@@ -1,0 +1,424 @@
+/* =========================================================
+   LANDING
+   ========================================================= */
+
+.landingContainer {
+    position: relative;
+    width: 100%;
+    height: calc(100svh - 5rem);
+    min-height: 650px;
+    overflow: hidden;
+    background: #101a35;
+}
+
+
+/* =========================================================
+   BACKGROUND IMAGE
+   ========================================================= */
+
+.landingImage {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center center;
+
+    display: block;
+}
+
+
+.textContainer {
+    position: absolute;
+    z-index: 2;
+    top: 35%;
+    left: 0;
+    transform: translateY(-50%);
+    width: min(52rem, 55%);
+    padding: clamp(2rem, 4vw, 4rem) clamp(2rem, 5vw, 5rem);
+    color: var(--black);
+    background-color: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(3px);
+    border-radius: 0 2rem 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(1rem, 1.5vw, 1.5rem);
+}
+
+
+.heading {
+    margin: 0;
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    line-height: 1.08;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+}
+
+
+.breakLine {
+    width: clamp(7rem, 12vw, 12rem);
+    height: 4px;
+    background: var(--accent2);
+    border-radius: 1rem;
+}
+
+
+.headingText {
+    max-width: 42rem;
+    margin: 0;
+    font-size: clamp(1rem, 1.25vw, 1.25rem);
+    line-height: 1.6;
+}
+
+
+.porfolioButton {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.9rem 1.25rem;
+    background-color: var(--accent);
+    color: var(--bgWhite);
+    border-radius: 0.4rem;
+    text-decoration: none;
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.porfolioButton p {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.porfolioButton svg {
+    transition: transform 0.25s ease;
+}
+
+.porfolioButton:hover {
+    transform: translateY(-2px);
+}
+
+.porfolioButton:hover svg {
+    transform: translateX(4px);
+}
+
+.bottomContainer {
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    color: var(--bgWhite);
+    background: rgba(26, 32, 77, 0.72);
+    backdrop-filter: blur(5px);
+    padding: clamp(1.5rem, 3vw, 4rem) clamp(1rem, 2vw, 2rem);
+}
+
+
+.serviceCard {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding-inline: clamp(1rem, 3vw, 4rem);
+    border-right: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+
+.serviceCard:last-child {
+    border-right: none;
+}
+
+
+.serviceCard svg {
+    flex-shrink: 0;
+    color: var(--accent2);
+    width: clamp(20px, 2vw, 24px);
+    height: clamp(20px, 2vw, 24px);
+}
+
+
+.serviceCard h3 {
+    margin: 0;
+    text-align: center;
+    font-size: clamp(0.75rem, 1vw, 0.95rem);
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+
+.serviceCard p {
+    max-width: 18rem;
+    margin: 0;
+    text-align: center;
+    font-weight: 300;
+    font-size: clamp(0.7rem, 0.85vw, 0.85rem);
+    line-height: 1.5;
+}
+
+
+@media (max-width: 1200px) {
+
+    .landingContainer {
+        min-height: 600px;
+    }
+
+    .textContainer {
+        width: 58%;
+    }
+
+    .serviceCard {
+        padding-inline: 1.5rem;
+    }
+
+}
+
+
+@media (max-width: 900px) {
+
+    .landingContainer {
+        height: calc(100svh - 4.5rem);
+        min-height: 650px;
+    }
+
+
+    .landingImage {
+        object-position: 58% center;
+    }
+
+
+    .textContainer {
+        top: 42%;
+
+        width: 65%;
+
+        padding: 2rem 2.5rem;
+
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+
+    .heading {
+        font-size: clamp(2.2rem, 5vw, 3.2rem);
+    }
+
+
+    .headingText {
+        font-size: 1rem;
+        max-width: 32rem;
+    }
+
+
+    .bottomContainer {
+        padding: 1.75rem 1rem;
+    }
+
+
+    .serviceCard {
+        padding-inline: 1rem;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .landingContainer {
+        height: auto;
+        min-height: calc(100svh - 4rem);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+
+    .landingImage {
+        position: absolute;
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: 62% center;
+    }
+
+
+    .textContainer {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: calc(100% - 2rem);
+        margin-top: 12vh;
+        margin-bottom: auto;
+        padding: 1.5rem;
+        gap: 1rem;
+        border-radius: 0 1.25rem 1.25rem 0;
+        background-color: rgba(255, 255, 255, 0.62);
+    }
+
+
+    .heading {
+        font-size: clamp(2rem, 9vw, 2.7rem);
+        line-height: 1.05;
+    }
+
+
+    .headingText {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+
+    .breakLine {
+        width: 6rem;
+        height: 3px;
+    }
+
+
+    .porfolioButton {
+        width: 100%;
+
+        padding: 0.9rem 1rem;
+    }
+
+
+    .bottomContainer {
+        position: relative;
+        bottom: auto;
+        width: 100%;
+        margin-top: 12vh;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 1rem 0;
+        background: rgba(15, 25, 58, 0.88);
+    }
+
+
+    .serviceCard {
+        min-height: 125px;
+        justify-content: center;
+        padding: 1rem 0.75rem;
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+
+    .serviceCard:nth-child(2n) {
+        border-right: none;
+    }
+
+
+    .serviceCard:nth-child(3),
+    .serviceCard:nth-child(4) {
+        border-bottom: none;
+    }
+
+
+    .serviceCard h3 {
+        font-size: 0.72rem;
+    }
+
+
+    .serviceCard p {
+        max-width: 11rem;
+
+        font-size: 0.7rem;
+        line-height: 1.4;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .landingContainer {
+        min-height: calc(100svh - 4rem);
+    }
+
+
+    .textContainer {
+        width: calc(100% - 1rem);
+        margin-top: 8vh;
+        padding: 1.25rem;
+    }
+
+
+    .heading {
+        font-size: 1.85rem;
+    }
+
+
+    .headingText {
+        font-size: 0.85rem;
+    }
+
+
+    .porfolioButton {
+        font-size: 0.8rem;
+    }
+
+
+    .serviceCard {
+        min-height: 115px;
+
+        padding-inline: 0.5rem;
+    }
+
+
+    .serviceCard svg {
+        width: 19px;
+        height: 19px;
+    }
+
+
+    .serviceCard h3 {
+        font-size: 0.65rem;
+    }
+
+
+    .serviceCard p {
+        font-size: 0.62rem;
+    }
+
+}
+
+@media (max-height: 700px) and (min-width: 601px) {
+
+    .landingContainer {
+        min-height: 600px;
+    }
+
+
+    .textContainer {
+        top: 40%;
+        padding-block: 1.5rem;
+        gap: 1rem;
+    }
+
+
+    .heading {
+        font-size: 2.5rem;
+    }
+
+
+    .bottomContainer {
+        padding-block: 1.25rem;
+    }
+
+
+    .serviceCard p {
+        display: none;
+    }
+
+}
