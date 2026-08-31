@@ -8,7 +8,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     font-size: 0.75rem;
     font-weight: 500;
 }
@@ -20,25 +19,19 @@
     flex-shrink: 0;
 }
 
-
 .logoSvg {
     width: auto;
     height: 50%;
-
     color: var(--accent);
-
     fill: currentColor !important;
     stroke: none !important;
 }
-
 
 .logoSvg path {
     fill: currentColor !important;
     stroke: none !important;
     stroke-width: 0 !important;
 }
-
-
 .logoSvg text,
 .logoSvg tspan {
     fill: currentColor !important;
@@ -50,7 +43,6 @@
     align-items: center;
 }
 
-
 .rightContainer {
     margin: 0;
     padding: 0;
@@ -60,12 +52,10 @@
     gap: clamp(1.5rem, 3vw, 3rem);
 }
 
-
 .rightContainer li {
     display: flex;
     align-items: center;
 }
-
 
 .rightContainer a {
     position: relative;
@@ -76,7 +66,6 @@
         color 0.3s ease,
         transform 0.3s ease;
 }
-
 
 .rightContainer a:not(.offerButton)::after {
     content: "";
@@ -91,11 +80,9 @@
     transition: transform 0.3s ease;
 }
 
-
 .rightContainer a:not(.offerButton):hover {
     color: var(--accent);
 }
-
 
 .rightContainer a:not(.offerButton):hover::after {
     transform: scaleX(1);
@@ -115,7 +102,6 @@
         opacity 0.25s ease;
 }
 
-
 .offerButton:hover {
     transform: translateY(-2px);
     opacity: 0.9;
@@ -134,7 +120,6 @@
     cursor: pointer;
 }
 
-
 .menuButton svg {
     width: 1.6rem;
     height: 1.6rem;
@@ -145,73 +130,56 @@
 }
 
 @media (max-width: 1050px) {
-
     .navContainer {
         padding-inline: 2rem;
     }
 
-
     .rightContainer {
         gap: 1.75rem;
     }
-
 }
 
-
 @media (max-width: 850px) {
-
     .navContainer {
         height: 4.5rem;
-
         padding-inline: 1.5rem;
     }
-
 
     .rightContainer {
         gap: 1.25rem;
     }
 
-
     .logoSvg {
         height: 48%;
     }
-
 
     .rightContainer {
         font-size: 0.68rem;
     }
 
-
     .offerButton {
         padding: 0.65rem 0.85rem;
     }
-
 }
 
 @media (max-width: 700px) {
-
     .navContainer {
         height: 4rem;
-
         padding-inline: 1rem;
     }
-
 
     .desktopNav {
         display: none;
     }
 
-
     .menuButton {
         display: flex;
     }
-
 
     .logoSvg {
         height: 52%;
         max-width: 180px;
     }
-
 
     .mobileMenu {
         position: absolute;
@@ -231,13 +199,11 @@
             transform 0.25s ease;
     }
 
-
     .mobileMenuOpen {
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
     }
-
 
     .mobileMenu ul {
         margin: 0;
@@ -247,11 +213,9 @@
         flex-direction: column;
     }
 
-
     .mobileMenu li {
         width: 100%;
     }
-
 
     .mobileMenu li a {
         width: 100%;
@@ -268,7 +232,6 @@
             padding-left 0.2s ease;
     }
 
-
     .mobileMenu li a:hover {
         color: var(--accent);
         padding-left: 0.5rem;
@@ -277,7 +240,6 @@
     .mobileMenu li:last-child {
         margin-top: 0.75rem;
     }
-
 
     .mobileMenu .mobileOfferButton {
         min-height: 3rem;
@@ -289,22 +251,17 @@
         border-radius: 0.25rem;
         font-size: 0.75rem;
         font-weight: 500;
-
         letter-spacing: 0.05em;
     }
-
 
     .mobileMenu .mobileOfferButton:hover {
         padding-left: 1rem;
         color: var(--bgWhite);
         opacity: 0.9;
     }
-
 }
 
-
 @media (max-width: 400px) {
-
     .navContainer {
         padding-inline: 0.85rem;
     }
@@ -321,5 +278,4 @@
     .mobileMenu ul {
         padding-inline: 0.85rem;
     }
-
 }

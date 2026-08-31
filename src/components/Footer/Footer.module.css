@@ -4,14 +4,9 @@
     --footer-text: #ffffff;
     --footer-muted: rgba(255, 255, 255, 0.62);
     --footer-border: rgba(255, 255, 255, 0.12);
-
     width: 100%;
     color: var(--footer-text);
 }
-
-/* =========================================================
-   CTA
-   ========================================================= */
 
 .cta {
     position: relative;
@@ -25,8 +20,6 @@
     inset: 0;
     opacity: 0.14;
     pointer-events: none;
-
-    /* Abstract pool/water wave effect */
     background:
         radial-gradient(ellipse at 15% 100%,
             transparent 0 35%,
@@ -41,11 +34,9 @@
 .ctaInner {
     position: relative;
     z-index: 1;
-
     width: min(100% - 96px, 1440px);
     min-height: 145px;
     margin: 0 auto;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -55,7 +46,6 @@
 .ctaEyebrow {
     display: block;
     margin-bottom: 8px;
-
     color: rgba(255, 255, 255, 0.72);
     font-size: 10px;
     font-weight: 500;
@@ -64,7 +54,6 @@
 
 .ctaContent h2 {
     margin: 0;
-
     font-size: clamp(24px, 2.2vw, 34px);
     line-height: 1.15;
     font-weight: 400;
@@ -73,7 +62,6 @@
 
 .ctaContent p {
     margin: 10px 0 0;
-
     color: rgba(255, 255, 255, 0.78);
     font-size: 13px;
     line-height: 1.6;
@@ -81,26 +69,20 @@
 
 .ctaButton {
     flex-shrink: 0;
-
     min-width: 160px;
     height: 50px;
     padding: 0 22px;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 18px;
-
     border: 1px solid rgba(255, 255, 255, 0.65);
     border-radius: 3px;
-
     color: #fff;
     text-decoration: none;
-
     font-size: 12px;
     font-weight: 500;
     letter-spacing: 0.08em;
-
     transition:
         background-color 0.25s ease,
         border-color 0.25s ease,
@@ -110,7 +92,6 @@
 .ctaButton svg {
     width: 17px;
     height: 17px;
-
     transition: transform 0.25s ease;
 }
 
@@ -123,10 +104,6 @@
     transform: translateX(4px);
 }
 
-/* =========================================================
-   MAIN FOOTER
-   ========================================================= */
-
 .main {
     background: var(--footer-bg);
 }
@@ -136,17 +113,11 @@
     margin: 0 auto;
 }
 
-/* =========================================================
-   GRID
-   ========================================================= */
-
 .grid {
     display: grid;
     grid-template-columns:
         minmax(260px, 1.5fr) minmax(150px, 0.8fr) minmax(190px, 1fr) minmax(260px, 1.25fr);
-
     gap: 70px;
-
     padding: 62px 0 52px;
 }
 
@@ -154,66 +125,44 @@
     padding-right: 20px;
 }
 
-/* =========================================================
-   LOGO
-   ========================================================= */
-
 .logoLink {
     display: inline-flex;
     align-items: center;
-
     width: 210px;
     height: 66px;
-
     text-decoration: none;
 }
 
 .logoPlaceholder {
     width: 210px;
     height: 66px;
-
     display: block;
 }
 
-/*
-  The SVG above is intentionally empty.
-  Replace its content later with the actual Alfa logo.
-*/
-
 .brandDescription {
     margin: 20px 0 0;
-
     color: var(--footer-muted);
     font-size: 12px;
     line-height: 1.8;
 }
 
-/* =========================================================
-   SOCIALS
-   ========================================================= */
-
 .socials {
     display: flex;
     align-items: center;
     gap: 10px;
-
     margin-top: 25px;
 }
 
 .socialLink {
     width: 30px;
     height: 30px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 50%;
-
     color: rgba(255, 255, 255, 0.72);
     text-decoration: none;
-
     transition:
         color 0.2s ease,
         border-color 0.2s ease,
@@ -237,13 +186,8 @@
     font-weight: 600;
 }
 
-/* =========================================================
-   COLUMNS
-   ========================================================= */
-
 .column h3 {
     margin: 4px 0 23px;
-
     color: #fff;
     font-size: 10px;
     font-weight: 600;
@@ -262,7 +206,6 @@
     font-size: 12px;
     line-height: 1.4;
     text-decoration: none;
-
     transition:
         color 0.2s ease,
         transform 0.2s ease;
@@ -272,10 +215,6 @@
     color: #fff;
     transform: translateX(3px);
 }
-
-/* =========================================================
-   CONTACT
-   ========================================================= */
 
 .contactList {
     display: flex;
@@ -287,22 +226,18 @@
     display: flex;
     align-items: flex-start;
     gap: 11px;
-
     color: var(--footer-muted);
     font-size: 11px;
     line-height: 1.6;
     text-decoration: none;
-
     transition: color 0.2s ease;
 }
 
 .contactItem svg {
     flex-shrink: 0;
-
     width: 14px;
     height: 14px;
     margin-top: 2px;
-
     color: rgba(255, 255, 255, 0.7);
 }
 
@@ -312,37 +247,27 @@
 
 .webIcon {
     flex-shrink: 0;
-
     width: 14px;
     height: 14px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     color: rgba(255, 255, 255, 0.7);
     font-size: 15px;
     line-height: 1;
 }
 
-/* =========================================================
-   BOTTOM BAR
-   ========================================================= */
-
 .bottom {
     min-height: 65px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 30px;
-
     border-top: 1px solid var(--footer-border);
 }
 
 .bottom p {
     margin: 0;
-
     color: rgba(255, 255, 255, 0.4);
     font-size: 10px;
 }
@@ -357,7 +282,6 @@
     color: rgba(255, 255, 255, 0.4);
     font-size: 10px;
     text-decoration: none;
-
     transition: color 0.2s ease;
 }
 
@@ -369,10 +293,6 @@
     color: rgba(255, 255, 255, 0.2);
     font-size: 10px;
 }
-
-/* =========================================================
-   TABLET
-   ========================================================= */
 
 @media (max-width: 1100px) {
     .grid {
@@ -392,12 +312,7 @@
     }
 }
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
 @media (max-width: 700px) {
-
     .ctaInner,
     .container {
         width: min(100% - 40px, 1440px);
@@ -406,7 +321,6 @@
     .ctaInner {
         min-height: auto;
         padding: 42px 0;
-
         flex-direction: column;
         align-items: flex-start;
         gap: 28px;
@@ -427,7 +341,6 @@
     .grid {
         grid-template-columns: 1fr;
         gap: 40px;
-
         padding: 48px 0 40px;
     }
 
@@ -452,19 +365,13 @@
     .bottom {
         min-height: auto;
         padding: 22px 0;
-
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
     }
 }
 
-/* =========================================================
-   SMALL MOBILE
-   ========================================================= */
-
 @media (max-width: 420px) {
-
     .logoLink,
     .logoPlaceholder {
         width: 180px;

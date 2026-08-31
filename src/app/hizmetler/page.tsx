@@ -1,9 +1,23 @@
-import styles from "./page.module.css"
+import ServicesHero from "./components/ServicesHero";
+import ServicesGrid from "./components/ServicesGrid";
+import ServiceDetail from "./components/ServiceDetail";
+import ArchitectureApproach from "./components/ArchitectureApproach";
+import FeaturedProjects from "./components/FeaturedProjects";
 
-const page = () => {
+const ServicesPage = () => {
     return (
-        <main>page</main>
-    )
-}
+        <main>
+            <ServicesHero />
 
-export default page
+            <ServicesGrid />
+
+            <ServiceDetail />
+
+            <ArchitectureApproach />
+
+            <FeaturedProjects />
+        </main>
+    );
+};
+
+export default ServicesPage;

@@ -21,14 +21,12 @@
     gap: 1rem;
 }
 
-
 .subHeading {
     font-size: 0.85rem;
     font-weight: 500;
     letter-spacing: 0.08em;
     color: var(--accent2);
 }
-
 
 .heading {
     margin: 0;
@@ -37,7 +35,6 @@
     letter-spacing: -0.03em;
     font-weight: 600;
 }
-
 
 .headingContainer p {
     max-width: 650px;
@@ -65,7 +62,6 @@
         opacity 0.25s ease;
 }
 
-
 .aboutButton p {
     margin: 0;
     color: var(--bgWhite);
@@ -73,26 +69,18 @@
     font-weight: 600;
 }
 
-
 .aboutButton svg {
     transition: transform 0.25s ease;
 }
-
 
 .aboutButton:hover {
     transform: translateY(-2px);
     opacity: 0.92;
 }
 
-
 .aboutButton:hover svg {
     transform: translateX(4px);
 }
-
-
-/* =========================================================
-   IMAGE
-   ========================================================= */
 
 .imageContainer {
     position: absolute;
@@ -109,7 +97,6 @@
     border-radius: 10rem 0 0 10rem;
     corner-shape: squircle;
 }
-
 
 .imageContainer img {
     width: 100%;
@@ -130,7 +117,6 @@
     gap: 1rem;
 }
 
-
 .infoCard {
     min-width: 0;
     display: flex;
@@ -138,18 +124,15 @@
     gap: 0.75rem;
 }
 
-
 .infoCard svg {
     flex-shrink: 0;
     color: var(--accent2);
     fill: var(--accent2);
 }
 
-
 .infoCardText {
     min-width: 0;
 }
-
 
 .infoCardText h3 {
     margin: 0;
@@ -157,7 +140,6 @@
     line-height: 1;
     font-weight: 600;
 }
-
 
 .infoCardText p {
     margin: 0.4rem 0 0;
@@ -168,64 +150,49 @@
 }
 
 @media (max-width: 1200px) {
-
     .aboutContainer {
         padding: 3.5rem;
     }
-
-
     .headingContainer,
     .bottomContainer {
         width: 58%;
     }
 
-
     .imageContainer {
         width: 38%;
-
         height: 85%;
-
         border-radius: 7rem 0 0 7rem;
     }
-
 
     .infoCard {
         gap: 0.5rem;
     }
 
-
     .infoCard svg {
         width: 27px;
         height: 27px;
     }
-
 }
 
 @media (max-width: 900px) {
-
     .aboutContainer {
         min-height: 600px;
         padding: 3rem 2.5rem;
         gap: 3rem;
     }
-
-
     .headingContainer,
     .bottomContainer {
         width: 60%;
     }
 
-
     .heading {
         font-size: clamp(2rem, 5vw, 3rem);
     }
-
 
     .headingContainer p {
         font-size: 0.95rem;
         line-height: 1.6;
     }
-
 
     .imageContainer {
         width: 38%;
@@ -233,26 +200,21 @@
         border-radius: 5rem 0 0 5rem;
     }
 
-
     .bottomContainer {
         grid-template-columns: repeat(2, 1fr);
         row-gap: 1.5rem;
     }
 
-
     .infoCardText h3 {
         font-size: 1.35rem;
     }
 
-
     .infoCardText p {
         font-size: 0.6rem;
     }
-
 }
 
 @media (max-width: 650px) {
-
     .aboutContainer {
         min-height: auto;
         padding: 3rem 1.25rem;
@@ -266,31 +228,23 @@
         max-width: none;
     }
 
-
     .subHeading {
         font-size: 0.75rem;
     }
 
-
     .heading {
         font-size: clamp(2rem, 10vw, 2.7rem);
-
         line-height: 1.05;
     }
 
-
     .headingContainer p {
         width: 100%;
-
         font-size: 0.9rem;
-
         line-height: 1.65;
     }
 
-
     .aboutButton {
         padding: 0.85rem 1.25rem;
-
         border-radius: 0.4rem;
     }
 
@@ -305,11 +259,9 @@
         border-radius: 4rem 0 0 4rem;
     }
 
-
     .imageContainer img {
         object-position: center;
     }
-
 
     .bottomContainer {
         width: 100%;
@@ -319,76 +271,60 @@
         order: 3;
     }
 
-
     .infoCard {
         gap: 0.7rem;
     }
-
 
     .infoCard svg {
         width: 25px;
         height: 25px;
     }
 
-
     .infoCardText h3 {
         font-size: 1.25rem;
     }
 
-
     .infoCardText p {
         font-size: 0.58rem;
     }
-
 }
 
 @media (max-width: 400px) {
-
     .aboutContainer {
         padding: 2.5rem 1rem;
     }
-
 
     .heading {
         font-size: 1.9rem;
     }
 
-
     .headingContainer p {
         font-size: 0.85rem;
     }
 
-
     .imageContainer {
         height: 230px;
-
         border-radius: 3rem 0 0 3rem;
     }
-
 
     .bottomContainer {
         gap: 1.75rem 0.75rem;
     }
 
-
     .infoCard {
         gap: 0.5rem;
     }
-
 
     .infoCard svg {
         width: 21px;
         height: 21px;
     }
 
-
     .infoCardText h3 {
         font-size: 1.1rem;
     }
 
-
     .infoCardText p {
         font-size: 0.52rem;
     }
-
 }

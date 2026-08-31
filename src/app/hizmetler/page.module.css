@@ -1,3 +1,141 @@
-body {
-    height: 100vh;
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bgLight);
+    padding-top: 6rem;
+}
+
+.hero {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    color: var(--textGray);
+    line-height: 1.6;
+}
+
+.gridSection {
+    padding: 4rem 2rem;
+    background-color: var(--bgWhite);
+}
+
+.gridContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.card {
+    background-color: var(--bgLight);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(7, 19, 47, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(7, 19, 47, 0.1);
+}
+
+.iconWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: var(--black);
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.card:hover .iconWrapper {
+    background-color: var(--accent);
+}
+
+.icon {
+    font-size: 1.5rem;
+    color: var(--bgWhite);
+}
+
+.cardTitle {
+    font-size: 1.25rem;
+    color: var(--black);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.cardText {
+    font-size: 1rem;
+    color: var(--textGray);
+    line-height: 1.6;
+}
+
+.ctaSection {
+    text-align: center;
+    padding: 6rem 2rem;
+    background-color: var(--bgLight);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ctaTitle {
+    font-size: 2rem;
+    color: var(--black);
+    margin-bottom: 1rem;
+}
+
+.ctaText {
+    font-size: 1.125rem;
+    color: var(--textGray);
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.ctaButton {
+    background-color: var(--accent2);
+    color: var(--bgWhite);
+    padding: 1rem 2.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.ctaButton:hover {
+    background-color: var(--accent);
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .gridContainer {
+        grid-template-columns: 1fr;
+    }
 }

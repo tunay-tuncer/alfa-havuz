@@ -12,34 +12,25 @@
     color: var(--black);
     width: 55%;
     max-width: 750px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     gap: 1rem;
 }
-
 
 .subHeading {
     font-size: 0.85rem;
     font-weight: 500;
-
     letter-spacing: 0.08em;
-
     color: var(--accent2);
 }
 
-
 .heading {
     margin: 0;
-
     font-size: clamp(2.2rem, 4vw, 4rem);
-
     line-height: 1.08;
     letter-spacing: -0.03em;
-
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -50,32 +41,23 @@
 .stepsContainer {
     width: 100%;
     max-width: 1500px;
-
     margin: 0;
     padding: 0;
-
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-
     list-style: none;
-
     counter-reset: process-step;
 }
 
 .stepCard {
     position: relative;
-
     flex: 1;
-
     min-width: 0;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-
     text-align: center;
-
     counter-increment: process-step;
 }
 
@@ -90,7 +72,6 @@
 .stepNumber {
     font-size: 0;
 }
-
 
 .stepNumber::before {
     content: "0" counter(process-step);
@@ -131,7 +112,6 @@
     right: 0;
     transform: translate(50%,
             -50%);
-
     color: #7d8a96;
     font-size: 1.4rem;
     font-weight: 300;
@@ -139,53 +119,39 @@
 }
 
 @media (max-width: 1200px) {
-
     .processContainer {
         padding-inline: 3rem;
     }
-
 
     .stepsContainer {
         gap: 1rem;
     }
 
-
     .stepCard:not(:last-child)::after {
         font-size: 1.2rem;
     }
 
-
     .stepCard>svg {
         width: 48px;
         height: 48px;
-
         margin-bottom: 1.25rem;
     }
-
 
     .stepHeader {
         font-size: 0.8rem;
     }
 
-
     .stepText {
         max-width: 190px;
-
         font-size: 0.72rem;
     }
-
 }
 
-
-
 @media (max-width: 900px) {
-
     .processContainer {
         padding: 4rem 2rem;
-
         gap: 3rem;
     }
-
 
     .heading {
         font-size: 2.2rem;
@@ -193,55 +159,41 @@
 
     .stepsContainer {
         display: grid;
-
         grid-template-columns: repeat(2, minmax(0, 1fr));
-
         gap: 3.5rem 2rem;
     }
-
 
     .stepCard:not(:last-child)::after {
         display: none;
     }
 
-
     .stepCard {
         padding: 0 1rem;
     }
-
 
     .stepNumber {
         margin-bottom: 1.25rem;
     }
 
-
     .stepCard>svg {
         width: 46px;
         height: 46px;
-
         margin-bottom: 1.25rem;
     }
-
 
     .stepHeader {
         font-size: 0.82rem;
     }
 
-
     .stepText {
         max-width: 260px;
-
         font-size: 0.75rem;
     }
-
 }
 
-
 @media (max-width: 600px) {
-
     .processContainer {
         padding: 3.5rem 1.25rem;
-
         gap: 2.75rem;
     }
 
@@ -249,11 +201,9 @@
         gap: 0.5rem;
     }
 
-
     .subHeading {
         font-size: 0.65rem;
     }
-
 
     .heading {
         max-width: 330px;
@@ -263,44 +213,32 @@
 
     .stepsContainer {
         width: 100%;
-
         display: flex;
         flex-direction: column;
-
         gap: 0;
-
         align-items: stretch;
     }
 
-
     .stepCard {
         width: 100%;
-
         padding: 0 0 3.5rem;
-
         align-items: center;
     }
 
     .stepCard:not(:last-child)::after {
         display: block;
-
         content: "↓";
-
         top: auto;
         right: 50%;
         bottom: 1rem;
-
         transform: translateX(50%);
-
         color: #7d8a96;
-
         font-size: 1.2rem;
     }
 
     .stepNumber {
         margin-bottom: 1rem;
     }
-
 
     .stepNumber::before {
         font-size: 0.9rem;
@@ -309,59 +247,45 @@
     .stepCard>svg {
         width: 48px;
         height: 48px;
-
         margin-bottom: 1.1rem;
     }
 
     .stepHeader {
         margin-bottom: 0.65rem;
-
         font-size: 0.8rem;
     }
 
-
     .stepText {
         width: min(100%, 300px);
-
         font-size: 0.75rem;
-
         line-height: 1.6;
     }
-
 }
 
 @media (max-width: 400px) {
-
     .processContainer {
         padding: 3rem 1rem;
-
         gap: 2.5rem;
     }
-
 
     .heading {
         font-size: 1.75rem;
     }
 
-
     .stepCard {
         padding-bottom: 3.25rem;
     }
-
 
     .stepCard>svg {
         width: 44px;
         height: 44px;
     }
 
-
     .stepHeader {
         font-size: 0.75rem;
     }
 
-
     .stepText {
         font-size: 0.7rem;
     }
-
 }

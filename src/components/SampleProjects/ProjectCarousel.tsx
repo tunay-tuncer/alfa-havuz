@@ -1,53 +1,114 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import {
+    useEffect,
+    useRef,
+    useState,
+} from "react";
+
 import Link from "next/link";
+
+import {
+    FaArrowLeft,
+    FaArrowRight,
+} from "react-icons/fa6";
+
 import type { Project } from "./SampleProjects";
+
 import styles from "./SampleProjects.module.css";
+
 
 interface ProjectCarouselProps {
     projects: Project[];
+    variant?: "dark" | "light";
 }
 
-const ProjectCarousel = ({ projects }: ProjectCarouselProps) => {
-    const containerRef = useRef<HTMLDivElement>(null);
+const ProjectCarousel = ({
+    projects,
+    variant = "dark",
+}: ProjectCarouselProps) => {
 
-    const [activeIndex, setActiveIndex] = useState(0);
+    const containerRef =
+        useRef<HTMLDivElement>(null);
 
 
-    /* =====================================================
-       FIND ACTIVE PROJECT
-       ===================================================== */
+    const [activeIndex, setActiveIndex] =
+        useState(0);
+
+
+    const [visibleCount, setVisibleCount] =
+        useState(4);
+
 
     useEffect(() => {
-        const container = containerRef.current;
+
+        const updateVisibleCount = () => {
+
+            const width = window.innerWidth;
+
+            if (width <= 600) {
+                setVisibleCount(1);
+            }
+            else if (width <= 900) {
+                setVisibleCount(2);
+            }
+            else {
+                setVisibleCount(4);
+            }
+        };
+
+
+        updateVisibleCount();
+
+        window.addEventListener(
+            "resize",
+            updateVisibleCount
+        );
+
+
+        return () => {
+            window.removeEventListener(
+                "resize",
+                updateVisibleCount
+            );
+        };
+
+    }, []);
+
+
+    useEffect(() => {
+
+        const container =
+            containerRef.current;
 
         if (!container) return;
 
+
         const handleScroll = () => {
-            const cards = Array.from(
-                container.children
-            ) as HTMLElement[];
 
-            if (!cards.length) return;
+            const card =
+                container.children[0] as HTMLElement;
 
-            const scrollLeft = container.scrollLeft;
+            if (!card) return;
 
-            let closestIndex = 0;
-            let closestDistance = Infinity;
 
-            cards.forEach((card, index) => {
-                const distance = Math.abs(
-                    card.offsetLeft - scrollLeft
+            const gap = parseFloat(
+                getComputedStyle(container).columnGap ||
+                getComputedStyle(container).gap
+            );
+
+
+            const step =
+                card.offsetWidth + gap;
+
+
+            const index =
+                Math.round(
+                    container.scrollLeft / step
                 );
 
-                if (distance < closestDistance) {
-                    closestDistance = distance;
-                    closestIndex = index;
-                }
-            });
 
-            setActiveIndex(closestIndex);
+            setActiveIndex(index);
         };
 
 
@@ -64,28 +125,60 @@ const ProjectCarousel = ({ projects }: ProjectCarouselProps) => {
                 handleScroll
             );
         };
+
     }, []);
 
+    const maxIndex = Math.max(
+        0,
+        projects.length - visibleCount
+    );
 
-    /* =====================================================
-       GO TO PROJECT
-       ===================================================== */
 
-    const goToProject = (index: number) => {
-        const container = containerRef.current;
+    const scrollToIndex = (index: number) => {
+
+        const container =
+            containerRef.current;
 
         if (!container) return;
 
-        const card = container.children[index] as HTMLElement;
+
+        const card =
+            container.children[index] as HTMLElement;
 
         if (!card) return;
+
 
         container.scrollTo({
             left: card.offsetLeft,
             behavior: "smooth",
         });
 
+
         setActiveIndex(index);
+    };
+
+    const next = () => {
+
+        const nextIndex =
+            Math.min(
+                activeIndex + 1,
+                maxIndex
+            );
+
+
+        scrollToIndex(nextIndex);
+    };
+
+    const previous = () => {
+
+        const previousIndex =
+            Math.max(
+                activeIndex - 1,
+                0
+            );
+
+
+        scrollToIndex(previousIndex);
     };
 
 
@@ -96,11 +189,26 @@ const ProjectCarousel = ({ projects }: ProjectCarouselProps) => {
 
     return (
         <>
+
             {/* =================================================
                 CAROUSEL
                ================================================= */}
 
-            <div className={styles.projectsWrapper}>
+            <div className={`${styles.carouselWrapper} ${variant === "light"
+                    ? styles.light
+                    : ""
+                }`}>
+
+                <button
+                    type="button"
+                    className={`${styles.carouselArrow} ${styles.leftArrow}`}
+                    onClick={previous}
+                    disabled={activeIndex === 0}
+                    aria-label="Önceki proje"
+                >
+                    <FaArrowLeft />
+                </button>
+
 
                 <div
                     ref={containerRef}
@@ -108,6 +216,7 @@ const ProjectCarousel = ({ projects }: ProjectCarouselProps) => {
                 >
 
                     {projects.map((project) => (
+
                         <Link
                             key={project.id}
                             href={`/portfolyo/${project.id}`}
@@ -123,6 +232,7 @@ const ProjectCarousel = ({ projects }: ProjectCarouselProps) => {
 
 
                             <div className={styles.cardContent}>
+
                                 <h3>
                                     {project.title}
                                 </h3>
@@ -130,12 +240,25 @@ const ProjectCarousel = ({ projects }: ProjectCarouselProps) => {
                                 <span>
                                     {project.category}
                                 </span>
+
                             </div>
 
                         </Link>
+
                     ))}
 
                 </div>
+
+
+                <button
+                    type="button"
+                    className={`${styles.carouselArrow} ${styles.rightArrow}`}
+                    onClick={next}
+                    disabled={activeIndex >= maxIndex}
+                    aria-label="Sonraki proje"
+                >
+                    <FaArrowRight />
+                </button>
 
             </div>
 
@@ -144,31 +267,42 @@ const ProjectCarousel = ({ projects }: ProjectCarouselProps) => {
                 PAGINATION
                ================================================= */}
 
-            {projects.length > 1 && (
+            {maxIndex > 0 && (
+
                 <div className={styles.pagination}>
 
-                    {projects.map((project, index) => (
+                    {Array.from({
+                        length: maxIndex + 1,
+                    }).map((_, index) => (
+
                         <button
-                            key={project.id}
+                            key={index}
                             type="button"
-                            aria-label={`Projeye geç: ${project.title}`}
+                            className={`${styles.dot} ${activeIndex === index
+                                ? styles.active
+                                : ""
+                                }`}
+                            aria-label={`Proje ${index + 1
+                                }`}
                             aria-current={
                                 activeIndex === index
                                     ? "true"
                                     : undefined
                             }
-                            className={`${styles.dot} ${activeIndex === index
-                                    ? styles.active
-                                    : ""
-                                }`}
-                            onClick={() => goToProject(index)}
+                            onClick={() =>
+                                scrollToIndex(index)
+                            }
                         />
+
                     ))}
 
                 </div>
+
             )}
+
         </>
     );
 };
+
 
 export default ProjectCarousel;

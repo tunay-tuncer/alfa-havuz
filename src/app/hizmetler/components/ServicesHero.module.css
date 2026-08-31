@@ -1,0 +1,87 @@
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 72vh;
+    display: flex;
+    align-items: center;
+    background-image:
+        url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2200&q=85");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg,
+            rgba(7, 19, 47, 0.9) 0%,
+            rgba(7, 19, 47, 0.66) 48%,
+            rgba(7, 19, 47, 0.22) 100%);
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    width: min(100% - 8rem, 1400px);
+    margin: 0 auto;
+    color: var(--bgWhite);
+}
+
+.eyebrow {
+    display: block;
+    margin-bottom: 1rem;
+    color: var(--accent2);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+}
+
+.content h1 {
+    max-width: 850px;
+    margin: 0;
+    font-size: clamp(2.8rem, 5vw, 5rem);
+    line-height: 1.03;
+    letter-spacing: -0.04em;
+    font-weight: 500;
+}
+
+.content p {
+    max-width: 550px;
+    margin: 1.5rem 0 0;
+    color: rgba(255, 255, 255, 0.94);
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+@media (max-width: 900px) {
+    .hero {
+        min-height: 65vh;
+    }
+
+    .content {
+        width: calc(100% - 5rem);
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        min-height: 75svh;
+        background-position: 62% center;
+    }
+
+    .content {
+        width: calc(100% - 2.5rem);
+    }
+
+    .content h1 {
+        font-size: clamp(2.3rem, 10vw, 3.2rem);
+    }
+
+    .content p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+}

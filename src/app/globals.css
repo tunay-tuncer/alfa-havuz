@@ -1,18 +1,16 @@
 :root {
   --bgWhite: #ffffff;
   --bgLight: #fdf6e6;
-  /* --black: #090c1a; */
   --black: #07132f;
   --accent: #3c4bb0;
   --accent2: #d67b52;
-  --textGray: gray;
+  --textGray: #4b5563;
 }
 
 html {
   height: 100%;
   overflow-y: auto;
 }
-
 html,
 body {
   width: 100%;
@@ -64,7 +62,6 @@ li {
   background-color: var(--accent2);
   border-radius: 1rem;
 }
-
 
 @media (prefers-color-scheme: dark) {
   html {

@@ -1,16 +1,9 @@
-import styles from "./SampleProjects.module.css";
 import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
-import ProjectCarousel from "./ProjectCarousel";
+import styles from "./FeaturedProjects.module.css";
+import ProjectCarousel from "@/components/SampleProjects/ProjectCarousel";
 
-export interface Project {
-    id: number;
-    title: string;
-    category: string;
-    image: string;
-}
-
-const projects: Project[] = [
+const projects = [
     {
         id: 1,
         title: "Bodrum Villa Projesi",
@@ -35,49 +28,48 @@ const projects: Project[] = [
         category: "OTEL",
         image: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1200&q=85",
     },
-    {
-        id: 5,
-        title: "Marmaris Resort Projesi",
-        category: "OTEL",
-        image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=85",
-    },
 ];
 
-const SampleProjects = () => {
+const FeaturedProjects = () => {
     return (
         <section className={styles.section}>
+
             <div className={styles.container}>
 
-                {/* HEADER */}
-                <div className={styles.topContainer}>
+                <div className={styles.header}>
 
-                    <div className={styles.headerContainer}>
-                        <span className={styles.subHeading}>
-                            PORTFOLYO
+                    <div>
+                        <span>
+                            PROJELERİMİZ
                         </span>
 
-                        <h2 className={styles.heading}>
-                            Seçkin Projelerimizden Bazıları
+                        <h2>
+                            Hizmetlerimizi
+                            <br />
+                            projelerde görün.
                         </h2>
                     </div>
 
                     <Link
                         href="/portfolyo"
-                        className={styles.portfolioButton}
+                        className={styles.button}
                     >
-                        <span>TÜM PROJELERİ GÖR</span>
+                        <span>
+                            TÜM PROJELERİ GÖR
+                        </span>
+
                         <FaArrowRightLong />
                     </Link>
 
                 </div>
 
 
-                {/* CLIENT COMPONENT */}
-                <ProjectCarousel projects={projects} variant="dark" />
+                <ProjectCarousel projects={projects} variant="light" />
 
             </div>
+
         </section>
     );
 };
 
-export default SampleProjects;
+export default FeaturedProjects;

@@ -21,7 +21,7 @@ const Landing = () => {
         { id: 0, icon: FaWater, heading: "ANAHTAR TESLİM HAVUZ", text: "Tasarım, uygulama ve bakım dahil komple çözümler." },
         { id: 1, icon: FaTemperatureHigh, heading: "ISI POMPASI SİSTEMLERİ", text: "Yüksek verimli ısıtma çözümleri ile 4 mevsim konfor." },
         { id: 2, icon: FaRegSnowflake, heading: "SOĞUTMA SİSTEMLERİ", text: "Modern soğutma sistemleri ile ferah ve verimli alanlar." },
-        { id: 3, icon: IoWaterOutline, heading: "FİLTRASYON SİSTEMLERİ", text: "Kristal berraklığında su için ileri filtrasyon teknolojileri." },
+        { id: 3, icon: IoWaterOutline, heading: "SU ŞARTLANDIRMA", text: "Kristal berraklığında su için ileri filtrasyon teknolojileri." },
     ]
 
     return (
