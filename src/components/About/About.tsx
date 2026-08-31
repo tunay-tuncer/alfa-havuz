@@ -33,7 +33,7 @@ const About = () => {
                 <h1 className={styles.heading}>
                     Estetik Tasarım.<br />
                     İleri Teknoloji.
-                    Kalıcı Komfor.
+                    Kalıcı Konfor.
                 </h1>
                 <p>Alfa Havuz & İklimlendirme, lüks villa ve otel projelerine özel havuz, ısıtma, soğutma ve filtrasyon sistemlerinde anahtar teslim çözümler sunar. Her projede kaliteyi, güveni ve sürdürülebilirliği esas alırız.</p>
                 <Link href={"/kurumsal"} className={styles.aboutButton}>
@@ -52,7 +52,7 @@ const About = () => {
                 {stats.map((item) => {
                     const IconComponent = item.icon;
                     return (
-                        <li className={styles.infoCard}>
+                        <li key={item.id} className={styles.infoCard}>
                             <IconComponent size={32} />
                             <div className={styles.infoCardText}>
                                 <h3>{item.heading}</h3>
