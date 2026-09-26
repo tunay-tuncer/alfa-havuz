@@ -3,6 +3,7 @@ import { IconType } from 'react-icons';
 import { MdOutlineEditNote, MdOutlineDesignServices, MdConstruction } from "react-icons/md";
 import { PiExam } from "react-icons/pi";
 import { BiSupport } from "react-icons/bi";
+import { Reveal, Stagger } from "@/components/Reveal";
 
 interface ProcessItem {
     id: number;
@@ -25,16 +26,27 @@ const Process = () => {
         <section className={styles.processContainer}>
 
             <div className={styles.headerContainer}>
-                <span className={styles.subHeading}>
-                    SÜREÇ
-                </span>
+                <Reveal variant="fade-down" delay={0.1} distance={15}>
+                    <span className={styles.subHeading}>
+                        SÜREÇ
+                    </span>
+                </Reveal>
 
-                <h2 className={styles.heading}>
-                    Fikri Gerçeğe Dönüştürüyoruz
-                </h2>
+                <Reveal variant="fade-up" delay={0.2} distance={22}>
+                    <h2 className={styles.heading}>
+                        Fikri Gerçeğe Dönüştürüyoruz
+                    </h2>
+                </Reveal>
             </div>
 
-            <ul className={styles.stepsContainer}>
+            <Stagger
+                as="ul"
+                className={styles.stepsContainer}
+                variant="fade-up"
+                baseDelay={0.25}
+                delayStep={0.12}
+                duration={0.75}
+            >
                 {processSteps.map((step) => {
                     const IconComponent = step.icon;
                     return (
@@ -43,14 +55,13 @@ const Process = () => {
                             <IconComponent size={24} />
                             <h3 className={styles.stepHeader}>{step.header}</h3>
                             <p className={styles.stepText}>{step.text}</p>
-                        </li>)
+                        </li>
+                    );
                 })}
-            </ul>
-
-
+            </Stagger>
 
         </section>
-    )
-}
+    );
+};
 
-export default Process
+export default Process;

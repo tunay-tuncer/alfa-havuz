@@ -5,11 +5,14 @@
   --accent: #3c4bb0;
   --accent2: #d67b52;
   --textGray: #4b5563;
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 html {
   height: 100%;
   overflow-y: auto;
+  scroll-behavior: smooth;
 }
 html,
 body {
@@ -68,3 +71,34 @@ li {
     color-scheme: dark;
   }
 }
+
+/* Micro-animations and Keyframes */
+@keyframes floatAnimation {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.85;
+    box-shadow: 0 0 15px rgba(214, 123, 82, 0.2);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 25px rgba(214, 123, 82, 0.45);
+  }
+}
+
+@keyframes lineGrow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+

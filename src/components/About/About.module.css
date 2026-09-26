@@ -96,6 +96,7 @@
     overflow: hidden;
     border-radius: 10rem 0 0 10rem;
     corner-shape: squircle;
+    box-shadow: -15px 20px 45px rgba(7, 19, 47, 0.12);
 }
 
 .imageContainer img {
@@ -104,6 +105,11 @@
     display: block;
     object-fit: cover;
     object-position: center;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.imageContainer:hover img {
+    transform: scale(1.04);
 }
 
 .bottomContainer {
@@ -115,6 +121,9 @@
     grid-template-columns: repeat(4, 1fr);
     align-items: center;
     gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .infoCard {
@@ -122,12 +131,25 @@
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+}
+
+.infoCard:hover {
+    transform: translateY(-3px);
+    background-color: rgba(214, 123, 82, 0.06);
 }
 
 .infoCard svg {
     flex-shrink: 0;
     color: var(--accent2);
     fill: var(--accent2);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.infoCard:hover svg {
+    transform: scale(1.15) rotate(-3deg);
 }
 
 .infoCardText {

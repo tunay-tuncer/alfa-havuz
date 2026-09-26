@@ -2,6 +2,7 @@ import styles from "./SampleProjects.module.css";
 import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
 import ProjectCarousel from "./ProjectCarousel";
+import { Reveal } from "@/components/Reveal";
 
 export interface Project {
     id: number;
@@ -52,28 +53,36 @@ const SampleProjects = () => {
                 <div className={styles.topContainer}>
 
                     <div className={styles.headerContainer}>
-                        <span className={styles.subHeading}>
-                            PORTFOLYO
-                        </span>
+                        <Reveal variant="fade-down" delay={0.1} distance={15}>
+                            <span className={styles.subHeading}>
+                                PORTFOLYO
+                            </span>
+                        </Reveal>
 
-                        <h2 className={styles.heading}>
-                            Seçkin Projelerimizden Bazıları
-                        </h2>
+                        <Reveal variant="fade-up" delay={0.2} distance={22}>
+                            <h2 className={styles.heading}>
+                                Seçkin Projelerimizden Bazıları
+                            </h2>
+                        </Reveal>
                     </div>
 
-                    <Link
-                        href="/portfolyo"
-                        className={styles.portfolioButton}
-                    >
-                        <span>TÜM PROJELERİ GÖR</span>
-                        <FaArrowRightLong />
-                    </Link>
+                    <Reveal variant="fade-left" delay={0.3} distance={20}>
+                        <Link
+                            href="/portfolyo"
+                            className={styles.portfolioButton}
+                        >
+                            <span>TÜM PROJELERİ GÖR</span>
+                            <FaArrowRightLong />
+                        </Link>
+                    </Reveal>
 
                 </div>
 
 
                 {/* CLIENT COMPONENT */}
-                <ProjectCarousel projects={projects} variant="dark" />
+                <Reveal variant="fade-up" delay={0.35} duration={0.8} distance={30}>
+                    <ProjectCarousel projects={projects} variant="dark" />
+                </Reveal>
 
             </div>
         </section>

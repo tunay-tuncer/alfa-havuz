@@ -26,7 +26,7 @@ export default function RootLayout({
     >
       <body
         className={montserrat.className}
-        style={{ overflowX: "hidden", overflowY: "hidden", margin: 0 }}
+        style={{ overflowX: "hidden", margin: 0 }}
       >
         <Navbar />
         {children}

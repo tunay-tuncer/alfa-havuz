@@ -1,4 +1,5 @@
 import styles from "./ArchitectureApproach.module.css";
+import { Reveal, Stagger } from "@/components/Reveal";
 
 const ArchitectureApproach = () => {
     return (
@@ -6,7 +7,14 @@ const ArchitectureApproach = () => {
 
             <div className={styles.container}>
 
-                <div className={styles.content}>
+                <Reveal
+                    as="div"
+                    variant="fade-left"
+                    duration={0.85}
+                    delay={0.15}
+                    distance={35}
+                    className={styles.content}
+                >
 
                     <span className={styles.eyebrow}>
                         YAKLAŞIMIMIZ
@@ -24,7 +32,14 @@ const ArchitectureApproach = () => {
                         parçası olarak ele alıyoruz.
                     </p>
 
-                    <div className={styles.points}>
+                    <Stagger
+                        as="div"
+                        className={styles.points}
+                        variant="fade-up"
+                        baseDelay={0.3}
+                        delayStep={0.1}
+                        duration={0.65}
+                    >
 
                         <div>
                             <strong>01</strong>
@@ -41,17 +56,24 @@ const ArchitectureApproach = () => {
                             <span>Uzun ömürlü sistemler</span>
                         </div>
 
-                    </div>
+                    </Stagger>
 
-                </div>
+                </Reveal>
 
 
-                <div className={styles.imageContainer}>
+                <Reveal
+                    as="div"
+                    variant="fade-right"
+                    duration={0.85}
+                    delay={0.25}
+                    distance={35}
+                    className={styles.imageContainer}
+                >
                     <img
                         src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1400&q=85"
                         alt="Mimari havuz projesi"
                     />
-                </div>
+                </Reveal>
 
             </div>
 

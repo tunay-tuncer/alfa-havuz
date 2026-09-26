@@ -37,6 +37,7 @@
     width: min(100% - 96px, 1440px);
     min-height: 145px;
     margin: 0 auto;
+    padding: 2rem 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -313,6 +314,7 @@
 }
 
 @media (max-width: 700px) {
+
     .ctaInner,
     .container {
         width: min(100% - 40px, 1440px);
@@ -372,6 +374,7 @@
 }
 
 @media (max-width: 420px) {
+
     .logoLink,
     .logoPlaceholder {
         width: 180px;

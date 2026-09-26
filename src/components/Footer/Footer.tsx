@@ -9,6 +9,7 @@ import {
 } from "react-icons/fi";
 import Logo from "../Logo";
 import styles from "./Footer.module.css";
+import { Reveal, Stagger } from "@/components/Reveal";
 
 const quickLinks = [
     { label: "Kurumsal", href: "/kurumsal" },
@@ -19,11 +20,11 @@ const quickLinks = [
 ];
 
 const services = [
-    { label: "Anahtar Teslim Havuz", href: "/hizmetler/anahtar-teslim-havuz" },
-    { label: "Isı Pompası Sistemleri", href: "/hizmetler/isi-pompasi" },
-    { label: "Soğutma Sistemleri", href: "/hizmetler/sogutma" },
-    { label: "Filtrasyon Sistemleri", href: "/hizmetler/filtrasyon" },
-    { label: "Bakım & Teknik Servis", href: "/hizmetler/bakim-teknik-servis" },
+    { label: "Anahtar Teslim Havuz", href: "/hizmetler#anahtar-teslim-havuz" },
+    { label: "Isı Pompası Sistemleri", href: "/hizmetler#isi-pompasi" },
+    { label: "Soğutma Sistemleri", href: "/hizmetler#sogutma" },
+    { label: "Filtrasyon Sistemleri", href: "/hizmetler#filtrasyon" },
+    { label: "Bakım & Teknik Servis", href: "/hizmetler#bakim-teknik-servis" },
 ];
 
 export default function Footer() {
@@ -33,35 +34,49 @@ export default function Footer() {
             <section className={styles.cta}>
                 <div className={styles.ctaInner}>
                     <div className={styles.ctaContent}>
-                        <span className={styles.ctaEyebrow}>ALFA HAVUZ & İKLİMLENDİRME</span>
+                        <Reveal variant="fade-down" delay={0.1} distance={12}>
+                            <span className={styles.ctaEyebrow}>ALFA HAVUZ & İKLİMLENDİRME</span>
+                        </Reveal>
 
-                        <h2>
-                            Hayalinizdeki projeyi
-                            <br />
-                            birlikte hayata geçirelim.
-                        </h2>
+                        <Reveal variant="fade-up" delay={0.2} distance={20}>
+                            <h2>
+                                Hayalinizdeki projeyi
+                                <br />
+                                birlikte hayata geçirelim.
+                            </h2>
+                        </Reveal>
 
-                        <p>
-                            Size özel çözümlerimiz ve teklifimiz için
-                            bizimle iletişime geçin.
-                        </p>
+                        <Reveal variant="fade-up" delay={0.3} distance={16}>
+                            <p>
+                                Size özel çözümlerimiz ve teklifimiz için
+                                bizimle iletişime geçin.
+                            </p>
+                        </Reveal>
                     </div>
 
-                    <Link href="/iletisim" className={styles.ctaButton}>
-                        <span>TEKLİF AL</span>
-                        <FiArrowRight />
-                    </Link>
+                    <Reveal variant="fade-left" delay={0.35} distance={25}>
+                        <Link href="/iletisim" className={styles.ctaButton}>
+                            <span>TEKLİF AL</span>
+                            <FiArrowRight />
+                        </Link>
+                    </Reveal>
                 </div>
             </section>
 
             {/* Main Footer */}
             <div className={styles.main}>
                 <div className={styles.container}>
-                    <div className={styles.grid}>
+                    <Stagger
+                        as="div"
+                        className={styles.grid}
+                        variant="fade-up"
+                        baseDelay={0.15}
+                        delayStep={0.1}
+                        duration={0.7}
+                    >
                         {/* Brand */}
                         <div className={styles.brandColumn}>
                             <Link href="/" className={styles.logoLink} aria-label="Alfa Ana Sayfa">
-                                {/* Logo placeholder */}
                                 <Logo className={styles.logoSVG} />
                             </Link>
 
@@ -138,29 +153,29 @@ export default function Footer() {
                                     </span>
                                 </a>
 
-                                <a href="tel:+902324567890" className={styles.contactItem}>
+                                <a href="tel:+905322367538" className={styles.contactItem}>
                                     <FiPhone />
                                     <span>+90 532 236 75 38</span>
                                 </a>
 
                                 <a
-                                    href="mailto:info@alfahavuz.com.tr"
+                                    href="mailto:info@alfahavuz.com"
                                     className={styles.contactItem}
                                 >
                                     <FiMail />
                                     <span>info@alfahavuz.com</span>
                                 </a>
 
-                                <a href="/" className={styles.contactItem}>
+                                <Link href="/" className={styles.contactItem}>
                                     <span className={styles.webIcon}>◎</span>
                                     <span>www.alfahavuz.com</span>
-                                </a>
+                                </Link>
                             </div>
                         </div>
-                    </div>
+                    </Stagger>
 
                     {/* Bottom */}
-                    <div className={styles.bottom}>
+                    <Reveal variant="fade-up" delay={0.2} distance={12} className={styles.bottom}>
                         <p>
                             © 2024 Alfa Havuz ve İklimlendirme. Tüm hakları saklıdır.
                         </p>
@@ -176,7 +191,7 @@ export default function Footer() {
                                 Kullanım Şartları
                             </Link>
                         </div>
-                    </div>
+                    </Reveal>
                 </div>
             </div>
         </footer>

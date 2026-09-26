@@ -4,7 +4,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { BsBuildingCheck } from "react-icons/bs";
 import { MdTimeline, MdPeople } from "react-icons/md";
 import { IconType } from 'react-icons';
-
+import { Reveal, Stagger } from "@/components/Reveal";
 
 interface StatItem {
     id: number;
@@ -25,30 +25,51 @@ const About = () => {
 
     return (
         <section className={styles.aboutContainer}>
-
-
-
             <div className={styles.headingContainer}>
-                <span className={styles.subHeading}>HAKKIMIZDA</span>
-                <h1 className={styles.heading}>
-                    Estetik Tasarım.<br />
-                    İleri Teknoloji.
-                    Kalıcı Konfor.
-                </h1>
-                <p>Alfa Havuz & İklimlendirme, lüks villa ve otel projelerine özel havuz, ısıtma, soğutma ve filtrasyon sistemlerinde anahtar teslim çözümler sunar. Her projede kaliteyi, güveni ve sürdürülebilirliği esas alırız.</p>
-                <Link href={"/kurumsal"} className={styles.aboutButton}>
-                    <p>HAKKIMIZDA</p>
-                    <FaArrowRightLong />
-                </Link>
+                <Reveal variant="fade-down" delay={0.1} distance={15}>
+                    <span className={styles.subHeading}>HAKKIMIZDA</span>
+                </Reveal>
+
+                <Reveal variant="fade-up" delay={0.2} distance={25}>
+                    <h1 className={styles.heading}>
+                        Estetik Tasarım<br />
+                        İleri Teknoloji <br />
+                        Kalıcı Konfor
+                    </h1>
+                </Reveal>
+
+                <Reveal variant="fade-up" delay={0.32} distance={20}>
+                    <p>Alfa Havuz & İklimlendirme, lüks villa ve otel projelerine özel havuz, ısıtma, soğutma ve filtrasyon sistemlerinde anahtar teslim çözümler sunar. Her projede kaliteyi, güveni ve sürdürülebilirliği esas alırız.</p>
+                </Reveal>
+
+                <Reveal variant="fade-up" delay={0.42} distance={18}>
+                    <Link href={"/kurumsal"} className={styles.aboutButton}>
+                        <p>HAKKIMIZDA</p>
+                        <FaArrowRightLong />
+                    </Link>
+                </Reveal>
             </div>
 
             <div className={styles.imageContainer}>
-                <img src={landingImageUrl} alt="" />
+                <Reveal
+                    variant="fade-right"
+                    duration={0.85}
+                    delay={0.2}
+                    distance={35}
+                    style={{ width: "100%", height: "100%" }}
+                >
+                    <img src={landingImageUrl} alt="Alfa Havuz Hakkımızda" />
+                </Reveal>
             </div>
 
-
-
-            <div className={styles.bottomContainer}>
+            <Stagger
+                as="ul"
+                className={styles.bottomContainer}
+                variant="fade-up"
+                baseDelay={0.25}
+                delayStep={0.1}
+                duration={0.7}
+            >
                 {stats.map((item) => {
                     const IconComponent = item.icon;
                     return (
@@ -61,9 +82,9 @@ const About = () => {
                         </li>
                     )
                 })}
-            </div>
+            </Stagger>
         </section>
     )
 }
 
-export default About
+export default About;

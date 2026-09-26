@@ -2,6 +2,7 @@ import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
 import styles from "./FeaturedProjects.module.css";
 import ProjectCarousel from "@/components/SampleProjects/ProjectCarousel";
+import { Reveal } from "@/components/Reveal";
 
 const projects = [
     {
@@ -38,7 +39,7 @@ const FeaturedProjects = () => {
 
                 <div className={styles.header}>
 
-                    <div>
+                    <Reveal variant="fade-left" delay={0.15} distance={25}>
                         <span>
                             PROJELERİMİZ
                         </span>
@@ -48,23 +49,27 @@ const FeaturedProjects = () => {
                             <br />
                             projelerde görün.
                         </h2>
-                    </div>
+                    </Reveal>
 
-                    <Link
-                        href="/portfolyo"
-                        className={styles.button}
-                    >
-                        <span>
-                            TÜM PROJELERİ GÖR
-                        </span>
+                    <Reveal variant="fade-right" delay={0.25} distance={20}>
+                        <Link
+                            href="/portfolyo"
+                            className={styles.button}
+                        >
+                            <span>
+                                TÜM PROJELERİ GÖR
+                            </span>
 
-                        <FaArrowRightLong />
-                    </Link>
+                            <FaArrowRightLong />
+                        </Link>
+                    </Reveal>
 
                 </div>
 
 
-                <ProjectCarousel projects={projects} variant="light" />
+                <Reveal variant="fade-up" delay={0.35} duration={0.8} distance={30}>
+                    <ProjectCarousel projects={projects} variant="light" />
+                </Reveal>
 
             </div>
 

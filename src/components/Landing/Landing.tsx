@@ -6,6 +6,7 @@ import { FaWater } from "react-icons/fa";
 import { IoWaterOutline } from "react-icons/io5";
 import { FaRegSnowflake } from "react-icons/fa";
 import { IconType } from 'react-icons';
+import { Reveal, Stagger } from "@/components/Reveal";
 
 interface ServiceItem {
     id: number;
@@ -26,19 +27,37 @@ const Landing = () => {
 
     return (
         <section className={styles.landingContainer}>
-
-            <img className={styles.landingImage} src={landingImageUrl} alt="" />
+            <img className={styles.landingImage} src={landingImageUrl} alt="Alfa Havuz Villa" />
+            
             <div className={styles.textContainer}>
-                <h1 className={styles.heading}>Hayalinizdeki Havuz, <br />Mükemmel Mühendislik.</h1>
-                <div className={styles.breakLine}></div>
-                <p className={styles.headingText}>Alfa Havuz & İklimlendirme olarak lüks yaşam alanlarına estetik, konfor ve teknoloji katıyoruz.</p>
-                <Link href={"/portfolyo"} className={styles.porfolioButton}>
-                    <p>PROJELERİ İNCELE</p>
-                    <FaArrowRightLong />
-                </Link>
+                <Reveal variant="fade-up" delay={0.2} distance={18}>
+                    <h1 className={styles.heading}>Hayalinizdeki Havuz, <br />Mükemmel Mühendislik</h1>
+                </Reveal>
+                
+                <Reveal variant="fade-right" delay={0.32} distance={24}>
+                    <div className={styles.breakLine}></div>
+                </Reveal>
+
+                <Reveal variant="fade-up" delay={0.42} distance={18}>
+                    <p className={styles.headingText}>Alfa Havuz & İklimlendirme olarak lüks yaşam alanlarına estetik, konfor ve teknoloji katıyoruz.</p>
+                </Reveal>
+
+                <Reveal variant="fade-up" delay={0.52} distance={16}>
+                    <Link href={"/portfolyo"} className={styles.porfolioButton}>
+                        <p>PROJELERİ İNCELE</p>
+                        <FaArrowRightLong />
+                    </Link>
+                </Reveal>
             </div>
 
-            <div className={styles.bottomContainer}>
+            <Stagger
+                as="div"
+                className={styles.bottomContainer}
+                variant="fade-up"
+                baseDelay={0.35}
+                delayStep={0.12}
+                duration={0.75}
+            >
                 {serviceItems.map((item) => {
                     const IconComponent = item.icon;
                     return (
@@ -49,7 +68,7 @@ const Landing = () => {
                         </div>
                     );
                 })}
-            </div>
+            </Stagger>
         </section>
     )
 }

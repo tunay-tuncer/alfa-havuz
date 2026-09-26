@@ -59,23 +59,31 @@
     align-items: center;
     text-align: center;
     counter-increment: process-step;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stepCard:hover {
+    transform: translateY(-5px);
 }
 
 .stepNumber {
     margin: 0 0 1.5rem;
     color: var(--black);
-    font-size: 1rem;
+    font-size: 0;
     font-weight: 600;
     line-height: 1;
-}
-
-.stepNumber {
-    font-size: 0;
 }
 
 .stepNumber::before {
     content: "0" counter(process-step);
     font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.stepCard:hover .stepNumber::before {
+    color: var(--accent2);
 }
 
 .stepCard>svg {
@@ -84,16 +92,26 @@
     margin-bottom: 1.5rem;
     color: var(--accent2);
     opacity: 0.85;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+}
+
+.stepCard:hover>svg {
+    transform: scale(1.12) translateY(-3px);
+    opacity: 1;
 }
 
 .stepHeader {
     margin: 0 0 0.9rem;
     color: var(--black);
-    font-size: 0.85rem;
+    font-size: 1.25rem;
     line-height: 1.2;
     font-weight: 700;
     letter-spacing: -0.01em;
-    font-size: 1.25rem;
+    transition: color 0.3s ease;
+}
+
+.stepCard:hover .stepHeader {
+    color: var(--accent);
 }
 
 .stepText {

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
 import styles from "./ServicesGrid.module.css";
 import { services } from "../data/services";
+import { Reveal, Stagger } from "@/components/Reveal";
 
 const ServicesGrid = () => {
     return (
@@ -10,18 +11,28 @@ const ServicesGrid = () => {
             <div className={styles.container}>
 
                 <div className={styles.header}>
-                    <span>HİZMETLERİMİZ</span>
+                    <Reveal variant="fade-down" delay={0.1} distance={15}>
+                        <span>HİZMETLERİMİZ</span>
+                    </Reveal>
 
-                    <h2>
-                        Projeniz için doğru çözüm,
-                        <br />
-                        doğru mühendislikle başlar.
-                    </h2>
+                    <Reveal variant="fade-up" delay={0.22} distance={22}>
+                        <h2>
+                            Projeniz için doğru çözüm,
+                            <br />
+                            doğru mühendislikle başlar.
+                        </h2>
+                    </Reveal>
                 </div>
 
 
-                <div className={styles.grid}>
-
+                <Stagger
+                    as="div"
+                    className={styles.grid}
+                    variant="fade-up"
+                    baseDelay={0.2}
+                    delayStep={0.12}
+                    duration={0.75}
+                >
                     {services.map((service) => (
                         <Link
                             key={service.id}
@@ -63,8 +74,7 @@ const ServicesGrid = () => {
 
                         </Link>
                     ))}
-
-                </div>
+                </Stagger>
 
             </div>
 
